@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta chartset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soleil's Stupid Experiments</title>
+<link rel="stylesheet" type="text/css" href="mystyle2.css">
+
+<style>
+</style>
+<script>
+
+function displayFunction() {
+  var string = document.forms[0].userInput.value;
+  document.getElementById("textDisplay").innerHTML = string;
+}
+
+function keyCodeFunction() {
+  var x = event.charCode || event.keyCode;
+  document.getElementById("unicodeDisplay").innerHTML = x;
+}
+
+function animateFunction(number) {
+  var num = 20;
+  if(number == 1){
+    document.getElementById("animation1").style.animation = "";
+  }
+  if(number == 0){
+    document.getElementById("animation1").style.animation = "";
+  }
+
+}
+
+function clickDown(num) {
+  var hold = document.getElementsByClassName("slot")[num];
+  hold.style.width = "104%";
+}
+
+function clickUp(num) {
+  var hold = document.getElementsByClassName("slot")[num];
+  var container = document.getElementById("bars");
+  hold.style.width = "auto";
+  if(num == 0){
+    container.style.backgroundColor = "red";
+  }else if(num == 1){
+    container.style.backgroundColor = "blue";
+  }else if(num == 2){
+    container.style.backgroundColor = "green";
+  }else if(num == 3){
+    container.style.backgroundColor = "black";
+  }else if(num == 4){
+    container.style.backgroundColor = "white";
+  }else{
+    container.style.backgroundColor = "rgba(30, 30, 30, 0.5)";
+  }
+}
+
+function clickLeave(num) {
+  var hold = document.getElementsByClassName("slot")[num];
+  var container = document.getElementById("bars");
+  hold.style.width = "auto";
+}
+
+</script>
+</head>
+
+<body>
+
+<div class="header" id="header">
+  <h1 id="title"><b>ソレイユノバカナ<br>
+  ウエブサイト</b><h1>
+</div>
+
+<div class="bars" id="bars">
+  <span class="slot" onmousedown="clickDown(0)" onmouseup="clickUp(0)" onmouseleave="clickLeave(0)"><i><b>アカ</b></i></span>
+  <span class="slot" onmousedown="clickDown(1)" onmouseup="clickUp(1)" onmouseleave="clickLeave(1)"><i><b>アオ</b></i></span>
+  <span class="slot" onmousedown="clickDown(2)" onmouseup="clickUp(2)" onmouseleave="clickLeave(2)"><i><b>ミドリ</b></i></span>
+  <span class="slot" onmousedown="clickDown(3)" onmouseup="clickUp(3)" onmouseleave="clickLeave(3)"><i><b>クロ</b></i></span>
+  <span class="slot" onmousedown="clickDown(4)" onmouseup="clickUp(4)" onmouseleave="clickLeave(4)"><i><b>シロ</b></i></span>
+  <span class="slot" onmousedown="clickDown(5)" onmouseup="clickUp(5)" onmouseleave="clickLeave(5)"><i><b>Original</b></i></span>
+  <a href="index.html" class="slot" onmousedown="clickDown(6)" onmouseup="clickUp(6)" onmouseleave="clickLeave(6)"><i><b>Home Page</b></i></a>
+</div>
+
+<div class="clearfix">
+<div class="infield" id="infield">
+  <div class="readArea">
+    User Input: <input type="text" name="userInput" onkeypress="keyCodeFunction()">
+  </div>
+  <div id="displayArea">
+    <div class="tD">
+      <p id="textDisplay">_</p>
+    </div>
+    <div class="uD">
+      <p id="unicodeDisplay">_</p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="container1" id="container1">
+  <div class="animation1" id="animation1">
+  </div>
+</div>
+<button id="animateButton" onclick="animateFunction(1)">Press for animation</button>
+<button id="stopButton" onclick="animateFunction(0)">Stop animation</button>
+
+<div class="niceCard">
+  <h1>Zelda</h1>
+  <div class="pic">
+    <a href="zeldadefault.png" target="_blank"><img src="zeldadefault.png" alt="Picture"></a>
+  </div>
+  <div class="info">
+    <p class="sub">Appearences:</p>
+    <p class="front">Super Smash Bros. Ultimate<br>
+    Hyrule Warriors<br>
+    The Legend of Zelda</p>
+  </div>
+  <div class="info">
+    <p class="sub">Created:</p>
+    <p class="front">Unknown</p>
+  </div>
+</div>
+
+<div class="container2">
+  <div class="blackSquare">
+    <div class="hiText">
+      <p><b>hi</b></p>
+    </div>
+  </div>
+  <p>hover over the black circle</p>
+</div>
+
+<table id="vocab">
+  <tr>
+    <th>Word</th>
+    <th>Romaji</th>
+    <th>English</th>
+  </tr>
+  <tr>
+    <td>使う</td>
+    <td>tsukau</td>
+    <td>to use</td>
+  </tr>
+  <tr>
+    <td>未来</td>
+    <td>mirai</td>
+    <td>the future</td>
+  </tr>
+  <tr>
+    <td>笑う</td>
+    <td>warau</td>
+    <td>to laugh</td>
+  </tr>
+</table>
+
+<div class="footer" id="footer">
+  <p>Someone make sure this makes sense: "私はウエブサイトのようにきれいですることが必要。" -Soleil.</p>
+</div>
+
+</body>
+</html>

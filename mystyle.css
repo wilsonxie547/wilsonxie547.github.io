@@ -1,0 +1,232 @@
+﻿body {
+  font-family: sans-serif;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: rgba(255, 130, 230, 0.5);
+}
+
+hr {
+  border: 1px solid black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div.sidebar {
+  position: fixed;
+  width: 7%;
+  height: auto;
+  background-color: rgba(30, 30, 30, 0.8);
+  right: 0;
+  border: 3px ridge rgba(0, 255, 100, 1);
+  border-right: none;
+  border-radius: 12px 0px 0px 12px;
+  display: inline-block;
+  overflow: auto;
+  transition: width 500ms ease;
+}
+
+div.sidebar:hover {
+  box-shadow: -10px 10px 5px rgb(100, 100, 100, 0.7);
+}
+
+div.sidebar-content {
+  display: none;
+  background-color: rgba(30, 30, 30, 0.7);
+  transition: width 500ms;
+}
+
+#sidebarButton {
+  display: block;
+  width: 100%;
+  background-color: rgba(0, 255, 100, 1);
+  padding: 5px;
+  margin: 0px;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#sidebarButton:hover {
+  background-color: hotpink;
+}
+
+div.sidebar-content a, div.sidebar-content span {
+  display: block;
+  text-align: center;
+  font-size: 50px;
+  text-decoration: none;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+div.sidebar-content a:hover, div.sidebar-content span:hover {
+  background-color: white;
+  color: black;
+}
+
+div.header {
+  padding: 0px;
+  margin: 0px;
+  border-top: 5px ridge rgba(70, 70, 70, 1);
+  border-bottom: 5px ridge rgba(70, 70, 70, 1);
+  background: url("zeldadefault.png") right top;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 130, 230, 0.5);
+}
+
+div.header h1 {
+  width: 75%;
+  margin: 25px;
+  padding: 5px;
+  text-align: center;
+  font-size: 100px;
+  color: black;
+  text-shadow: 5px 2px lightblue;
+}
+
+div.navbar {
+  padding-left: 50px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-top: 5px ridge rgba(70, 70, 70, 1);
+  border-bottom: 5px ridge rgba(70, 70, 70, 1);
+  border-right: 5px ridge rgba(70, 70, 70, 1);
+  overflow: hidden;
+  background-color: lightgray;
+}
+
+
+div.navbar a, #darkSwitch {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+  float: left;
+  background-color: black;
+  margin: 0px;  
+}
+
+#darkSwitch {
+  float: right;
+}
+
+#home {
+  background-color: red;
+}
+
+div.navbar a:hover, #darkSwitch:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+div.content {
+  width: 75%;
+  height: 1000px;
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(230, 230, 230, 0.5);
+  border: 5px ridge rgba(254, 254, 254, 0.5);
+}
+
+div.imgBox {
+  float: right;
+  width: 400px;
+  height: 300px;
+  margin: 15px;
+  border: 2px solid violet;
+}
+
+div.imgBox img {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+div.imgBox a:hover {
+  opacity: 0.5;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+div.post {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div.post h1 {
+  text-align: center;
+}
+
+div.gallery {
+  width: 25%;
+  float: right;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  border: 5px ridge lightgray;
+  background-color: rgba(244, 50, 130, 0.5);
+}
+
+div.gallery h1{
+  text-align: center;
+}
+
+div.pictures {
+  margin: 15px;
+  border: 5px ridge violet;
+  background-color: white;
+}
+
+div.pictures img{
+  margin: 0px;
+  width: 100%;
+  height: auto;
+  
+}
+
+div.pictures a:hover {
+  opacity: 0.5;
+}
+
+div.captions {
+  border: 3px solid black;
+  border-radius: 12px;
+}
+
+div.captions p {
+  padding: 2px;
+  margin: 0px;
+  text-align: center;
+  color: black;
+}
+
+div.footer {
+  float: bottom;
+  padding: 0px;
+  width: 100%;
+  height: auto;
+  margin-top: 1000px;
+  
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  background-color: rgba(255, 130, 230, 0);
+}
+
+div.footer p {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+} 

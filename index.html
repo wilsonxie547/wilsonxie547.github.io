@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta chartset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soleil's Website</title>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+<style>
+
+</style>
+
+<script>
+var darkFlip = (function () {
+  var counter = false;
+  return function () {counter = !(counter); return counter;}
+})();
+
+function darkFunction() {
+  if(darkFlip()){
+    document.getElementById("darkSwitch").innerHTML = "Pink Mode";
+    document.getElementById("darkSwitch").style.backgroundColor = "hotpink";
+    document.body.style.backgroundColor = "rgba(20, 20, 20, 1)";
+    document.getElementById("header").style.borderColor = "rgba(0, 255, 100, 1)";
+    document.getElementById("header").style.backgroundColor = "rgba(20, 20, 20, 1)";
+    document.getElementById("title").style.color = "white";
+    document.getElementById("title").style.textShadow = "5px 2px hotpink";
+    document.getElementById("navbar").style.borderColor = "rgba(0, 255, 100, 1)";
+    document.getElementById("navbar").style.backgroundColor = "rgba(0, 255, 100, 1)";
+    document.getElementById("content").style.backgroundColor = "rgba(30, 30, 30, 1)";
+    document.getElementById("content").style.color = "white";
+    document.getElementById("content").style.borderColor = "rgba(0, 255, 100, 1)";
+    document.getElementById("gallery").style.borderColor = "rgba(0, 255, 100, 1)";
+    document.getElementById("gallery").style.backgroundColor = "rgba(0, 255, 100, 1)";
+    document.getElementById("footer").style.color = "white";
+    document.getElementById("footer").style.borderColor = "rgba(0, 255, 100, 1)";
+  }else{
+    document.getElementById("darkSwitch").innerHTML = "Dark Mode";
+    document.getElementById("darkSwitch").style.backgroundColor = "black";
+    document.body.style.backgroundColor = "rgba(255, 130, 230, 0.5)";
+    document.getElementById("header").style.borderColor = "rgba(70, 70, 70, 1)";
+    document.getElementById("header").style.backgroundColor = "rgba(255, 130, 230, 0.5)";
+    document.getElementById("title").style.color = "black";
+    document.getElementById("title").style.textShadow = "5px 2px lightblue";
+    document.getElementById("navbar").style.borderColor = "rgba(70, 70, 70, 1)";
+    document.getElementById("navbar").style.backgroundColor = "lightgray";
+    document.getElementById("content").style.backgroundColor = "rgba(230, 230, 230, 0.5)";
+    document.getElementById("content").style.color = "black";
+    document.getElementById("content").style.borderColor = "rgba(254, 254, 254, 0.5)";
+    document.getElementById("gallery").style.borderColor = "lightgray";
+    document.getElementById("gallery").style.backgroundColor = "rgba(244, 50, 130, 0.5)";
+    document.getElementById("footer").style.color = "black";
+    document.getElementById("footer").style.borderColor = "black";
+  }
+}
+
+var sideOn = (function () {
+  var counter = false;
+  return function () {counter = !(counter); return counter;}
+})();
+
+function sideSwitch(spVal) {
+  var counter = sideOn();
+  if((counter == 1) && (spVal == 1)){
+    sideOn();
+    return;
+  }
+  if(counter){
+      document.getElementById("sidebar-content").style.display = "block";
+      document.getElementById("sidebar-content").style.display = "block";
+      document.getElementById("sidebar").style.width = "25%";
+      document.getElementById("sidebar").style.height = "99%";
+      document.getElementById("sidebarButton").style.borderBottom = "3px solid black";
+      document.getElementById("sidebar").style.boxShadow = "-10px 10px 5px rgb(100, 100, 100, 0.7)";
+  }else{
+      document.getElementById("sidebar-content").style.display = "none";
+      document.getElementById("sidebar-content").style.display = "none";
+      document.getElementById("sidebar").style.width = "7%";
+      document.getElementById("sidebar").style.height = "auto";
+      document.getElementById("sidebarButton").style.borderBottom = "none";
+      document.getElementById("sidebar").style.boxShadow = "";
+  }
+}
+
+var flipOn = (function () {
+  var counter = false;
+  return function () {counter = !(counter); return counter;}
+})();
+
+function flipFunction() {
+  if(flipOn()){
+    document.getElementById("notSidebar").style.transform = "scaleX(-1)";
+    document.getElementById("sidebar").style.zIndex = "10";
+  }else{
+    document.getElementById("notSidebar").style.transform = "scaleX(1)";
+    document.getElementById("sidebar").style.zIndex = "10";
+  }
+}
+
+var invertOn = (function () {
+  var counter = false;
+  return function () {counter = !(counter); return counter;}
+})();
+
+function invertFunction() {
+  if(invertOn()){
+    document.getElementById("notSidebar").style.filter = "invert(100%)";
+    document.getElementById("sidebar").style.zIndex = "10";
+  }else{
+    document.getElementById("notSidebar").style.filter = "invert(0%)";
+    document.getElementById("sidebar").style.zIndex = "10";
+  }
+}
+
+var simpleOn = (function () {
+  var counter = false;
+  return function () {counter = !(counter); return counter;}
+})();
+
+function simpleFunction() {
+  if(simpleOn()){
+    document.getElementsByTagName("link")[0].setAttribute("href", "svkshbv");
+    document.getElementById("simple").innerHTML = "RESTORE CSS STYLESHEET";
+    document.getElementById("notSidebar").setAttribute("onclick", "");     //make sure you see revert switch in simple
+    window.setTimeout(delayedAlert, 250);
+    window.scrollTo(0, 0);
+  }else{
+    document.getElementsByTagName("link")[0].setAttribute("href", "mystyle.css");
+    document.getElementById("simple").innerHTML = "REMOVE STYLESHEET";
+    document.getElementById("notSidebar").setAttribute("onclick", "sideSwitch(1)");  //makes body able to close sidebar
+  }
+}
+
+function delayedAlert() {
+  alert("Click on 'RESTORE CSS STYLESHEET' in the top left, if you want to change this back. Also, if dark mode was on, try to turn that off first.");
+}
+
+function topFunction() {
+  window.scrollTo(0, 0);
+}
+
+function displayStuff() {
+  var txt = "";
+  var d = new Date();
+  txt += "Date: " + d + "\n";
+  txt += "Browser Codename: " + navigator.appCodeName + "\n";
+  txt += "Browser name: " + navigator.appName + "\n";
+  txt += "version: " + navigator.appVersion + "\n";
+  txt += "Platform: " + navigator.platform + "\n";
+  txt += "Online: " + navigator.onLine + "\n";
+  txt += "Language: " + navigator.language + "\n";
+  txt += "Inner Width: " + window.innerWidth + "\n";
+  txt += "Inner Height: " + window.innerHeight + "\n";
+  txt += "Outer Width: " + window.outerWidth + "\n";
+  txt += "Outer Height: " + window.outerHeight + "\n";
+  txt += "Inner Width: " + window.innerWidth + "\n";
+  alert(txt);
+}
+
+</script>
+</head>
+
+<body>
+<div class="sidebar" id="sidebar">
+  <span id="sidebarButton" onclick="sideSwitch(0)"><b>オプション</b></span>
+  <div class="sidebar-content" id="sidebar-content">
+    <a href="#">Wonder</a>
+    <span onclick="flipFunction()">Flip</span>
+    <span onclick="darkFunction()">Dark Switch</span>
+    <span onclick="invertFunction()">Invert Colors</span>
+    <span onclick="topFunction()">Back to Top</span>
+    <span id="simple" onclick="simpleFunction()">REMOVE STYLESHEET</span>
+    <span onclick="displayStuff()">Display Stuff</span>
+    <a href="experiments.html" target="_blank">Experimental</a>
+  </div>
+</div>
+
+<div id="notSidebar" onclick="sideSwitch(1)">
+
+<div class="header" id="header">
+  <h1 id="title"><b>ソレイユノ<br>
+  ウエブサイト</b><h1>
+</div>
+<div class="navbar" id="navbar">
+  <a href="index.html" id="home">Home</a>
+  <a href="http://www.nintendolife.com/" target="_blank">Nintendo Life</a>
+  <a href="https://www.serebii.net/index2.shtml" target="_blank">Serebii</a>
+  <a href="https://www.w3schools.com/html/html5_syntax.asp" target="_blank">w3schools HTML</a>
+  <a href="https://www.w3schools.com/css/css_website_layout.asp" target="_blank">w3schools CSS</a>
+  <a href="https://www.w3schools.com/js/js_conventions.asp" target="_blank">w3schools JavaScript</a>
+　　<a href="https://tangorin.com/" target="_blank">Tangorin</a>
+  <button type="button" id="darkSwitch" onclick="darkFunction()">Dark Mode</button>
+</div>
+
+<div class="clearfix">
+<div class="content" id="content">
+  <div class="clearfix">
+    <div class="post">
+      <h1>Soleil's Posts</h1>
+      <hr>
+      <h2>Dragonball FighterZ combos:</h2>
+      <div class="imgBox">
+        <a href="dna.jpg" target="_blank"><img src="blahhhhhh.jpg" alt="Some Picture"></a>
+      </div>
+      <a href="vegitocombo.mp4" target="_blank">Vegito Combo</a><br>
+      <a href="coolercombo.mp4" target="_blank">Cooler Combo</a>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<div class="gallery" id="gallery">
+  <h1><i>Gallery</i></h1>
+  <hr>
+  <div class="pictures">
+    <a href="zeldapose.png" target="_blank"><img src="zeldapose.png" alt="Zelda"></a>
+    <div class="captions">
+      <p><b>Princess Zelda</b></p>
+    </div>
+  </div>
+  <hr>
+  <div class="pictures">
+    <a href="ultimateteam.png" target="_blank"><img src="ultimateteam.png" alt="Smash Ultimate Team"></a>
+    <div class="captions">
+      <p><b>My Smash Ultimate team</b></p>
+    </div>
+  </div>
+  <hr>
+  <div class="pictures">
+    <a href="tpzelda.png" target="_blank"><img src="tpzelda.png" alt="TP Zelda"></a>
+    <div class="captions">
+      <p><b>Smash 4 Princess Zelda</b></p>
+    </div>
+  </div>
+  <hr>
+  <div class="pictures">
+    <a href="ultzelda.jpg" target="_blank"><img src="ultzelda.jpg" alt="Smash Ultimate Zelda"></a>
+    <div class="captions">
+      <p><b>Smash Ultimate Zelda</b></p>
+    </div>
+  </div>
+  <hr>
+  <div class="pictures">
+    <a href="adventuremode.jpg" target="_blank"><img src="adventuremode.jpg" alt="Adventure Mode"></a>
+    <div class="captions">
+      <p><b>Adventure Mode 100%</b></p>
+    </div>
+  </div>
+  <hr>
+  <div class="pictures">
+    <a href="sylveon.jpg" target="_blank"><img src="sylveon.jpg" alt="Sylveon"></a>
+    <div class="captions">
+      <p><b>Sylveon Plushie</b></p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer" id="footer">
+  <p>"私のウエブサイトのようにきれいですることが必要。" -Soleil.</p>
+</div>
+
+</div>
+
+</body>
+</html>
