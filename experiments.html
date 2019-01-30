@@ -10,6 +10,26 @@
 </style>
 <script>
 
+var sideOn = (function () {
+  var counter = false;
+  return function () {counter = !(counter); return counter;}
+})();
+
+function sideSwitch(spVal) {
+  var counter = sideOn();
+  if((counter == 1) && (spVal == 1)){
+    sideOn();
+    return;
+  }
+  if(counter){
+      document.getElementById("showBar").style.width = "30%";
+      document.getElementById("bars").style.display = "block";
+  }else{
+      document.getElementById("showBar").style.width = "7%";
+      document.getElementById("bars").style.display = "none";
+  }
+}
+
 function displayFunction() {
   var string = document.forms[0].userInput.value;
   document.getElementById("textDisplay").innerHTML = string;
@@ -34,6 +54,9 @@ function animateFunction(number) {
 function clickDown(num) {
   var hold = document.getElementsByClassName("slot")[num];
   hold.style.width = "104%";
+  if(num == 0){
+    hold.style.width = "96%";
+  }
 }
 
 function clickUp(num) {
@@ -41,17 +64,23 @@ function clickUp(num) {
   var container = document.getElementById("bars");
   hold.style.width = "auto";
   if(num == 0){
+    hold.style.width = "98%";
+    sideSwitch(0);
+  }
+  if(num == 1){
     container.style.backgroundColor = "red";
-  }else if(num == 1){
-    container.style.backgroundColor = "blue";
   }else if(num == 2){
-    container.style.backgroundColor = "green";
+    container.style.backgroundColor = "blue";
   }else if(num == 3){
-    container.style.backgroundColor = "black";
+    container.style.backgroundColor = "green";
   }else if(num == 4){
+    container.style.backgroundColor = "black";
+  }else if(num == 5){
     container.style.backgroundColor = "white";
-  }else{
+  }else if(num == 6){
     container.style.backgroundColor = "rgba(30, 30, 30, 0.5)";
+  }else{
+    
   }
 }
 
@@ -59,6 +88,9 @@ function clickLeave(num) {
   var hold = document.getElementsByClassName("slot")[num];
   var container = document.getElementById("bars");
   hold.style.width = "auto";
+  if(num == 0){
+    hold.style.width = "98%";
+  }
 }
 
 </script>
@@ -66,19 +98,24 @@ function clickLeave(num) {
 
 <body>
 
+<div id="showBar">
+  <span class="slot" id="showText" onmousedown="clickDown(0)" onmouseup="clickUp(0)" onmouseleave="clickLeave(0)"><b>Options</b></span>
+  <div class="bars" id="bars">
+    <span class="slot" onmousedown="clickDown(1)" onmouseup="clickUp(1)" onmouseleave="clickLeave(1)"><i><b>アカ</b></i></span>
+    <span class="slot" onmousedown="clickDown(2)" onmouseup="clickUp(2)" onmouseleave="clickLeave(2)"><i><b>アオ</b></i></span>
+    <span class="slot" onmousedown="clickDown(3)" onmouseup="clickUp(3)" onmouseleave="clickLeave(3)"><i><b>ミドリ</b></i></span>
+    <span class="slot" onmousedown="clickDown(4)" onmouseup="clickUp(4)" onmouseleave="clickLeave(4)"><i><b>クロ</b></i></span>
+    <span class="slot" onmousedown="clickDown(5)" onmouseup="clickUp(5)" onmouseleave="clickLeave(5)"><i><b>シロ</b></i></span>
+    <span class="slot" onmousedown="clickDown(6)" onmouseup="clickUp(6)" onmouseleave="clickLeave(6)"><i><b>Original</b></i></span>
+    <a href="index.html" class="slot" onmousedown="clickDown(7)" onmouseup="clickUp(7)" onmouseleave="clickLeave(7)"><i><b>Home Page</b></i></a>
+  </div>
+</div>
+
+<div id="notSidebar" onclick="sideSwitch(1)">
+
 <div class="header" id="header">
   <h1 id="title"><b>ソレイユノバカナ<br>
   ウエブサイト</b><h1>
-</div>
-
-<div class="bars" id="bars">
-  <span class="slot" onmousedown="clickDown(0)" onmouseup="clickUp(0)" onmouseleave="clickLeave(0)"><i><b>アカ</b></i></span>
-  <span class="slot" onmousedown="clickDown(1)" onmouseup="clickUp(1)" onmouseleave="clickLeave(1)"><i><b>アオ</b></i></span>
-  <span class="slot" onmousedown="clickDown(2)" onmouseup="clickUp(2)" onmouseleave="clickLeave(2)"><i><b>ミドリ</b></i></span>
-  <span class="slot" onmousedown="clickDown(3)" onmouseup="clickUp(3)" onmouseleave="clickLeave(3)"><i><b>クロ</b></i></span>
-  <span class="slot" onmousedown="clickDown(4)" onmouseup="clickUp(4)" onmouseleave="clickLeave(4)"><i><b>シロ</b></i></span>
-  <span class="slot" onmousedown="clickDown(5)" onmouseup="clickUp(5)" onmouseleave="clickLeave(5)"><i><b>Original</b></i></span>
-  <a href="index.html" class="slot" onmousedown="clickDown(6)" onmouseup="clickUp(6)" onmouseleave="clickLeave(6)"><i><b>Home Page</b></i></a>
 </div>
 
 <div class="clearfix">
@@ -156,6 +193,8 @@ function clickLeave(num) {
 
 <div class="footer" id="footer">
   <p>Someone make sure this makes sense: "私はウエブサイトのようにきれいですることが必要。" -Soleil.</p>
+</div>
+
 </div>
 
 </body>
