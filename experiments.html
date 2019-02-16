@@ -95,6 +95,25 @@ function clickLeave(num) {
   }
 }
 
+function frameOff(num) {
+  var arr = document.getElementsByClassName("framing");
+  var mark = document.getElementsByClassName("pMark");
+  for(var i = 0; i < arr.length; i++){
+    if(i != num){
+      arr[i].style.display = "none";
+      mark[i].style.backgroundColor = "white";
+      mark[i].style.color = "black";
+    }
+  }
+}
+
+function frameSwitch(num) {
+  frameOff(num);
+  document.getElementsByClassName("framing")[num].style.display = "block";
+  document.getElementsByClassName("pMark")[num].style.backgroundColor = "black";
+  document.getElementsByClassName("pMark")[num].style.color = "white";
+}
+
 </script>
 </head>
 
@@ -116,8 +135,41 @@ function clickLeave(num) {
 <div id="notSidebar" onclick="sideSwitch(1)">
 
 <div class="header" id="header">
-  <h1 id="title"><b>ソレイユノ<br>
-  ウエブサイト</b><h1>
+  <h1 id="title"><b>Soleil's Website!</b><h1>
+</div>
+
+<div class="navbar">
+  <a href="index.html"><b>Home</b></a>
+  <a href="http://www.nintendolife.com/"><b>Nintendo Life</b></a>
+  <a href="https://www.serebii.net/"><b>Serebii</b></a>
+</div>
+
+<div class="showOff">
+  <h1>Gallery</h1>
+  <div class="subBar">
+    <div class="framing" id="pic0">
+      <img src="hyrule12.jpg" alt="Zelda">
+    </div>
+    <div class="framing" id="pic1">
+      <img src="hyrule25.jpg" alt="Zelda">
+    </div>
+    <div class="framing" id="pic2">
+      <img src="hyrule31.jpg" alt="Ruto" title="Princess Ruto">
+    </div>
+    <div class="framing" id="pic3">
+      <img src="hyrule17.jpg" alt="Midna">
+    </div>
+  </div>
+  <div class="center">
+  <div id="pagination">
+    <span><b><</b></span>
+    <span class="pMark" onclick="frameSwitch(0)" style="background-color:black; color:white"><b>1</b></span>
+    <span class="pMark" onclick="frameSwitch(1)"><b>2</b></span>
+    <span class="pMark" onclick="frameSwitch(2)"><b>3</b></span>
+    <span class="pMark" onclick="frameSwitch(3)"><b>4</b></span>
+    <span><b>></b></span>
+  </div>
+  </div>
 </div>
 
 <div class="clearfix">
@@ -193,33 +245,6 @@ function clickLeave(num) {
   </tr>
 </table>
 
-<div class="showOff">
-  <h1>Gallery</h1>
-  <div class="subBar">
-    <div class="framing" id="pic0">
-      <img src="hyrule12.jpg" alt="Zelda">
-    </div>
-    <div class="framing" id="pic1">
-      <img src="hyrule25.jpg" alt="Zelda">
-    </div>
-    <div class="framing" id="pic2">
-      <img src="hyrule31.jpg" alt="Ruto" title="Princess Ruto">
-    </div>
-    <div class="framing" id="pic3">
-      <img src="hyrule17.jpg" alt="Midna">
-    </div>
-  </div>
-  <div class="center">
-  <div id="pagination">
-    <span><</span>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
-    <span>4</span>
-    <span>></span>
-  </div>
-  </div>
-</div>
 
 <div class="footer" id="footer">
   <p>Someone make sure this makes sense: "私はウエブサイトのようにきれいですることが必要。" -Soleil.</p>
