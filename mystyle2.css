@@ -15,13 +15,13 @@
 ::-webkit-scrollbar-track {
   background-color: white;
   box-shadow: inset 0 0 5px grey;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 
 ::-webkit-scrollbar-thumb {
   width: 13px;
-  background-color: rgba(30, 30, 30, 1);
-  border: 2px solid white;
+  background-color: rgba(30, 30, 30, 0.5);
+  border: 1px solid white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -60,10 +60,12 @@ div.header h1 {
 div.navbar {
   overflow: hidden;
   margin: 0px;
-  border: 2px solid azure;
+  border: 2px solid rgba(60, 60, 60, 1);
   background-color: rgba(40, 40, 40, 1);
   border-left: 0px;
   border-right: 0px;
+  border-top: 0px;
+  background-image: linear-gradient(180deg, black, rgba(70, 70, 70, 0.7));
 }
 
 div.navbar a {
@@ -74,6 +76,7 @@ div.navbar a {
   background-color: rgba(30, 30, 30, 1);
   color: white;
   text-decoration: none;
+  box-shadow: 5px 5px 5px black;
 }
 
 div.navbar a:hover {
@@ -168,25 +171,26 @@ div.showOff {
 
 div.showOff h1 {
   text-align: center;
-  font-size: 45px;
+  font-size: 47px;
   font-family: sans-serif;
   color: white;
   margin: 20px;
-  text-shadow: 5px 2px rgba(30, 30, 30, 1);
+  text-shadow: 5px 2px 5px rgba(30, 30, 30, 1);
 }
 
 div.subBar {
   max-width: 100%;
   height: auto%;
   background-color: rgba(30, 30, 30, 0.5);
+  background-image: linear-gradient(50deg, rgba(30, 30, 30, 0.7), rgba(70, 70, 70, 0.7));
   padding: 20px;
 }
 
 div.framing {
   display: block;
-  max-width: 600px;
+  max-width: 800px;
   height: auto;
-  transition: max-width 0.5s, max-height 0.5s ease;
+  transition: max-width 0.5s, max-height 0.5s, width 0.5s, height 0.5s ease;
   margin: 10px auto;
   padding: 0px;
 }
@@ -194,11 +198,19 @@ div.framing {
 div.framing img {
   width: 100%;
   height: 100%;
-  margin: 0px;
+  margin: 0px auto;
   padding: 0px;
   border: 10px ridge rgba(40, 40, 40, 1);
   box-shadow: 15px 10px 10px rgba(30, 30, 30, 0.5);
   border-radius: 15px;
+  border: 10px ridge rgb(230, 184, 0);
+}
+
+div.framing p {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  
 }
 
 #pic0 {
@@ -217,6 +229,14 @@ div.framing img {
   display: none;
 }
 
+#pic4 {
+  display: none;
+}
+
+#pic5 {
+  display: none;
+}
+
 div.center {
   display: block;
   width: 600px;
@@ -227,7 +247,7 @@ div.center {
 #pagination {
   display: block;
   width: 600px;
-  overflow: hidden;
+  
   margin: 10px auto;
 }
 
@@ -245,7 +265,12 @@ div.center {
   
 }
 
-div.pMark:first-child {
+.pMark:hover {
+  background-image: linear-gradient(10deg, pink, rgba(240, 130, 230, 0.7));
+  box-shadow: 3px 5px 3px rgba(30, 30, 30, 0.5);
+}
+
+span.pMark:first-child {
   background-color: black;
   color: white;
 }
@@ -256,7 +281,9 @@ div.infield {
   width: 60%;
   padding: 10px;
   background-color: lightgray;
+  background-image: linear-gradient(180deg, lightgray, rgba(200, 200, 200, 0.7));
   border: 2px ridge rgba(150, 150, 150, 1);
+  box-shadow: 30px 30px 10px rgba(60, 60, 60, 1);
 }
 
 div.readArea {

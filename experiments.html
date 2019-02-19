@@ -114,6 +114,11 @@ function frameSwitch(num) {
   document.getElementsByClassName("pMark")[num].style.color = "white";
 }
 
+function bigFunc(num) {
+  var container = document.getElementsByClassName("framing")[num];
+  container.style.maxWidth = "1200px";
+}
+
 </script>
 </head>
 
@@ -147,17 +152,29 @@ function frameSwitch(num) {
 <div class="showOff">
   <h1>Gallery</h1>
   <div class="subBar">
-    <div class="framing" id="pic0">
-      <img src="hyrule12.jpg" alt="Zelda">
+    <div class="framing" id="pic0" onclick="bigFunc(0)">
+      <img src="hyrule12.jpg" alt="Zelda" onclick="bigFunc(0)">
+      <p>Breathe of the Wild Zelda costume in Hyrule Warriors Definitive Edition</p>
     </div>
     <div class="framing" id="pic1">
       <img src="hyrule25.jpg" alt="Zelda">
+      <p>Twilight Princess Zelda costume in Hyrule Warriors Definitive Edition</p>
     </div>
     <div class="framing" id="pic2">
       <img src="hyrule31.jpg" alt="Ruto" title="Princess Ruto">
+      <p>Princess Ruto in Hyrule Warriors Definitive Edition</p>
     </div>
     <div class="framing" id="pic3">
       <img src="hyrule17.jpg" alt="Midna">
+      <p>Midna's Imp form in Hyrule Warriors Definitive Edition</p>
+    </div>
+    <div class="framing" id="pic4">
+      <img src="hyrule34.jpg" alt="Linkle">
+      <p>Linkle in Hyrule Warriors Definitive Edition</p>
+    </div>
+    <div class="framing" id="pic5">
+      <img src="hyrule14.jpg" alt="Cia">
+      <p>Cia from Hyrule Warriors Definitive Edition</p>
     </div>
   </div>
   <div class="center">
@@ -167,9 +184,14 @@ function frameSwitch(num) {
     <span class="pMark" onclick="frameSwitch(1)"><b>2</b></span>
     <span class="pMark" onclick="frameSwitch(2)"><b>3</b></span>
     <span class="pMark" onclick="frameSwitch(3)"><b>4</b></span>
+    <span class="pMark" onclick="frameSwitch(4)"><b>5</b></span>
+    <span class="pMark" onclick="frameSwitch(5)"><b>6</b></span>
     <span><b>></b></span>
   </div>
   </div>
+</div>
+
+<div class="corner">
 </div>
 
 <div class="clearfix">
@@ -247,7 +269,7 @@ function frameSwitch(num) {
 
 
 <div class="footer" id="footer">
-  <p>Someone make sure this makes sense: "私はウエブサイトのようにきれいですることが必要。" -Soleil.</p>
+  <p>"こんにちは！" -Soleil.</p>
 </div>
 
 </div>
