@@ -1,0 +1,28 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+div.header {
+  
+}
+
+div.header h1{
+  text-align: center;
+}
+
+div.card {
+  
+}
+
+div.card img {
+  max-width: 600px;
+  max-height: 400px;
+}
+
+div.card p{
+  text-align: left;
+}

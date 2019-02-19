@@ -40,8 +40,8 @@ function darkFunction() {
     document.body.style.backgroundColor = "rgba(255, 130, 230, 0.5)";
     document.getElementById("header").style.borderColor = "rgba(70, 70, 70, 1)";
     document.getElementById("header").style.backgroundColor = "rgba(255, 130, 230, 0.5)";
-    document.getElementById("title").style.color = "black";
-    document.getElementById("title").style.textShadow = "5px 2px lightblue";
+    document.getElementById("title").style.color = "white";
+    document.getElementById("title").style.textShadow = "5px 2px rgba(30, 30, 30, 1)";
     document.getElementById("navbar").style.borderColor = "rgba(70, 70, 70, 1)";
     document.getElementById("navbar").style.backgroundColor = "lightgray";
     document.getElementById("content").style.backgroundColor = "rgba(230, 230, 230, 0.5)";
@@ -68,14 +68,14 @@ function sideSwitch(spVal) {
   if(counter){
       document.getElementById("sidebar-content").style.display = "block";
       document.getElementById("sidebar-content").style.display = "block";
-      document.getElementById("sidebar").style.width = "25%";
+      document.getElementById("sidebar").style.maxWidth = "350px";
       document.getElementById("sidebar").style.height = "99%";
       document.getElementById("sidebarButton").style.borderBottom = "3px solid black";
       document.getElementById("sidebar").style.boxShadow = "-10px 10px 5px rgb(100, 100, 100, 0.7)";
   }else{
       document.getElementById("sidebar-content").style.display = "none";
       document.getElementById("sidebar-content").style.display = "none";
-      document.getElementById("sidebar").style.width = "7%";
+      document.getElementById("sidebar").style.maxWidth = "150px";
       document.getElementById("sidebar").style.height = "auto";
       document.getElementById("sidebarButton").style.borderBottom = "none";
       document.getElementById("sidebar").style.boxShadow = "";
@@ -183,11 +183,11 @@ function displayStuff() {
 </div>
 <div class="navbar" id="navbar">
   <a href="index.html" id="home">Home</a>
-  <a href="http://www.nintendolife.com/" target="_blank">Nintendo Life</a>
-  <a href="https://www.serebii.net/index2.shtml" target="_blank">Serebii</a>
-  <a href="https://www.w3schools.com/html/html5_syntax.asp" target="_blank">w3schools HTML</a>
-  <a href="https://www.w3schools.com/css/css_website_layout.asp" target="_blank">w3schools CSS</a>
-  <a href="https://www.w3schools.com/js/js_conventions.asp" target="_blank">w3schools JavaScript</a>
+  <a href="experiments.html">Experiments Page</a>
+  <a href="about.html">About Me</a>
+  <a href="https://www.w3schools.com/html/html5_syntax.asp">w3schools HTML</a>
+  <a href="https://www.w3schools.com/css/css_website_layout.asp">w3schools CSS</a>
+  <a href="https://www.w3schools.com/js/js_conventions.asp">w3schools JavaScript</a>
 　　<a href="https://tangorin.com/" target="_blank">Tangorin</a>
   <button type="button" id="darkSwitch" onclick="darkFunction()">Dark Mode</button>
 </div>
@@ -198,12 +198,18 @@ function displayStuff() {
     <div class="post">
       <h1>Soleil's Posts</h1>
       <hr>
-      <h2>Dragonball FighterZ combos:</h2>
+      <h2>Stuff from the Nintendo Switch:</h2>
       <div class="imgBox">
-        <a href="dna.jpg" target="_blank"><img src="blahhhhhh.jpg" alt="Some Picture"></a>
+        <img src="images/hyrule12.jpg" alt="Zelda">
+        <p>Cool pic from Hyrule Warriors Definitive Edition</p>
       </div>
-      <a href="vegitocombo.mp4" target="_blank">Vegito Combo</a><br>
-      <a href="coolercombo.mp4" target="_blank">Cooler Combo</a>
+      <p>Here are some combos from Dragon Ball FighterZ that I just want to put on here because I feel like it.<p>
+      <a href="images/vegitocombo.mp4" target="_blank">Vegito Combo</a><br>
+      <a href="images/coolercombo.mp4" target="_blank">Cooler Combo</a>
+      <p>Also, here is some cool looking combos from bayonetta 2</p>
+      <a href="images/bayo.mp4" target="_blank">bayonetta gameplay</a><br>
+      <a href="images/bayocombo1.mp4" target="_blank">combos</a><br>
+      <a href="images/bayocombo1.mp4" target="_blank">more combos</a>
     </div>
   </div>
   <hr>
@@ -213,42 +219,42 @@ function displayStuff() {
   <h1><i>Gallery</i></h1>
   <hr>
   <div class="pictures">
-    <a href="zeldapose.png" target="_blank"><img src="zeldapose.png" alt="Zelda"></a>
+    <img src="images/zeldapose.png" alt="Zelda">
     <div class="captions">
       <p><b>Princess Zelda</b></p>
     </div>
   </div>
   <hr>
   <div class="pictures">
-    <a href="ultimateteam.png" target="_blank"><img src="ultimateteam.png" alt="Smash Ultimate Team"></a>
+    <img src="images/ultimateteam.png" alt="Smash Ultimate Team">
     <div class="captions">
       <p><b>My Smash Ultimate team</b></p>
     </div>
   </div>
   <hr>
   <div class="pictures">
-    <a href="tpzelda.png" target="_blank"><img src="tpzelda.png" alt="TP Zelda"></a>
+    <img src="images/tpzelda.png" alt="TP Zelda">
     <div class="captions">
       <p><b>Smash 4 Princess Zelda</b></p>
     </div>
   </div>
   <hr>
   <div class="pictures">
-    <a href="ultzelda.jpg" target="_blank"><img src="ultzelda.jpg" alt="Smash Ultimate Zelda"></a>
+    <img src="images/ultzelda.jpg" alt="Smash Ultimate Zelda">
     <div class="captions">
       <p><b>Smash Ultimate Zelda</b></p>
     </div>
   </div>
   <hr>
   <div class="pictures">
-    <a href="adventuremode.jpg" target="_blank"><img src="adventuremode.jpg" alt="Adventure Mode"></a>
+    <img src="images/adventuremode.jpg" alt="Adventure Mode">
     <div class="captions">
       <p><b>Adventure Mode 100%</b></p>
     </div>
   </div>
   <hr>
   <div class="pictures">
-    <a href="sylveon.jpg" target="_blank"><img src="sylveon.jpg" alt="Sylveon"></a>
+    <img src="images/sylveon.jpg" alt="Sylveon">
     <div class="captions">
       <p><b>Sylveon Plushie</b></p>
     </div>
