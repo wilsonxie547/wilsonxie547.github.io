@@ -43,7 +43,8 @@ function darkFunction() {
     document.getElementById("title").style.color = "white";
     document.getElementById("title").style.textShadow = "5px 2px rgba(30, 30, 30, 1)";
     document.getElementById("navbar").style.borderColor = "rgba(70, 70, 70, 1)";
-    document.getElementById("navbar").style.backgroundColor = "lightgray";
+    document.getElementById("navbar").style.backgroundColor = "rgba(50, 50, 50, 1)";
+    document.getElementById("navbar").style.backgroundImage = "linear-gradient(180deg, black, rgba(70, 70, 70, 0.7))";
     document.getElementById("content").style.backgroundColor = "rgba(230, 230, 230, 0.5)";
     document.getElementById("content").style.color = "black";
     document.getElementById("content").style.borderColor = "rgba(254, 254, 254, 0.5)";
@@ -162,7 +163,7 @@ function displayStuff() {
 
 <body>
 <div class="sidebar" id="sidebar">
-  <span id="sidebarButton" onclick="sideSwitch(0)"><b>オプション</b></span>
+  <span id="sidebarButton" onclick="sideSwitch(0)"><b>Options</b></span>
   <div class="sidebar-content" id="sidebar-content">
     <a href="#">Wonder</a>
     <span onclick="flipFunction()">Flip</span>
@@ -178,18 +179,18 @@ function displayStuff() {
 <div id="notSidebar" onclick="sideSwitch(1)">
 
 <div class="header" id="header">
-  <h1 id="title"><b>ソレイユノ<br>
+  <h1 id="title"><b>ソレイユの<br>
   ウエブサイト</b><h1>
 </div>
 <div class="navbar" id="navbar">
-  <a href="index.html" id="home">Home</a>
-  <a href="experiments.html">Experiments Page</a>
-  <a href="about.html">About Me</a>
-  <a href="https://www.w3schools.com/html/html5_syntax.asp">w3schools HTML</a>
-  <a href="https://www.w3schools.com/css/css_website_layout.asp">w3schools CSS</a>
-  <a href="https://www.w3schools.com/js/js_conventions.asp">w3schools JavaScript</a>
-　　<a href="https://tangorin.com/" target="_blank">Tangorin</a>
-  <button type="button" id="darkSwitch" onclick="darkFunction()">Dark Mode</button>
+  <a href="index.html" id="home"><b>Home</b></a>
+  <a href="experiments.html"><b>Experiments Page</b></a>
+  <a href="about.html"><b>About Me</b></a>
+  <a href="https://www.w3schools.com/html/html5_syntax.asp"><b>w3schools HTML</b></a>
+  <a href="https://www.w3schools.com/css/css_website_layout.asp"><b>w3schools CSS</b></a>
+  <a href="https://www.w3schools.com/js/js_conventions.asp"><b>w3schools JavaScript</b></a>
+　　<a href="https://tangorin.com/" target="_blank"><b>Tangorin</b></a>
+  <button type="button" id="darkSwitch" onclick="darkFunction()"><b>Dark Mode</b></button>
 </div>
 
 <div class="clearfix">
