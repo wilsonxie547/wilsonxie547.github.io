@@ -7,19 +7,75 @@
 <link rel="stylesheet" type="text/css" href="aboutstyle.css">
 
 <script>
-
+function initCounter(num) {
+    if ( typeof initCounter.arr == 'undefined' ) {
+        initCounter.arr = [0, 0, 0]; //make bigger when you add more
+    }
+    
+    var hiddenContent = document.getElementsByClassName("hiddenInfo");
+    if(initCounter.arr[num] == 0) {
+        hiddenContent[num].style.display = "block";
+        initCounter.arr[num] = 1;
+    } else if (initCounter.arr[num] == 1){
+        hiddenContent[num].style.display = "none";
+        initCounter.arr[num] = 0;
+    } else {
+        
+    }
+}
 </script>
 </head>
 
 <body>
 <div class="header">
-  <h1>About Me</h1>
+  <h1><i>/Soleil's Website/</i></h1>
 </div>
-<div class="card">
-  <img src="images/sitting1.jpg" alt="Zelda Classic Mode">
-  <p>"Under construction right now, sorry..." -Soleil</p>
-  <a href="index.html">Home Page</a>
-  <a href="experiments.html">Experiments Page</a>
+<div class="navbar">
+  <a href="index.html"><b>Home</b></a>
+  <a href="experiments.html"><b>Experiments</b></a>
+  <a href="about.html"><b>About</b></a>
+</div>
+
+<div class="main">
+  <div class="card">
+    <h1>Soleil</h1>
+    <div class="imageBox">
+      <img src="images/sitting1.jpg" alt="Zelda Classic Mode">
+    </div>
+    <p>"Under construction right now, sorry..." -Soleil</p>
+  </div>
+  
+  <div class="skillBox">
+    <h1 id="dropButton">Skills</h1>
+    <div class="skillInfo">
+      <p>Languages: Java, C++, Python</p>
+    </div>
+  </div>
+</div>
+
+<div class="infoBox">
+  <h1 id="dropButton" onclick="initCounter(0)">Education</h1>
+  <div class="hiddenInfo">
+    <p>I went to school</p>
+  </div>
+</div>
+
+<div class="infoBox">
+  <h1 id="dropButton" onclick="initCounter(1)">Programming</h1>
+  <div class="hiddenInfo">
+    <p>I did some programming</p>
+  </div>
+</div>
+
+<div class="infoBox">
+  <h1 id="dropButton" onclick="initCounter(2)">Hobbies</h1>
+  <div class="hiddenInfo">
+    <p>I play Super Smash Bros. Ultimate</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>This Web Page is Under Construction Right Now</p>
 </div>
 
 </body>
